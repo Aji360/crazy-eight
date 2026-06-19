@@ -1,0 +1,16 @@
+# Flutter subproject (has its own repo)
+crazy8/
+
+# Research PDFs
+*.pdf
+
+# Word temp files
+~$*
+
+# Unrelated assignment files
+OOP Assignemnt 2.docx
+Report template.docx
+
+# OS files
+.DS_Store
+Thumbs.db

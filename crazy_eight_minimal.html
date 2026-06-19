@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crazy 8 — Ideation Workout</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="crazy_eight.css">
+</head>
+<body>
+  <div class="shell">
+
+    <!-- Header Section -->
+    <header class="topbar">
+      <div class="wordmark">Crazy 8 <span>/ IDEATION WORKOUT</span></div>
+      <div class="topbar-status" id="topbarStatus">READY</div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+    <!-- Onboarding Section -->
+    <section class="screen active" id="startScreen">
+
+      <div class="hero-number">8</div>
+      <div class="hero-label">Ideas &nbsp;·&nbsp; 8 Minutes &nbsp;·&nbsp; No Skill Required</div>
+      <div class="divider"></div>
+
+      <div class="rule-grid">
+        <div class="rule-item">
+          <div class="rule-n">8</div>
+          <div class="rule-txt">Sketches to draw</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-n">60</div>
+          <div class="rule-txt">Seconds per idea</div>
+        </div>
+        <div class="rule-item">
+          <div class="rule-n">0</div>
+          <div class="rule-txt">Perfection required</div>
+        </div>
+      </div>
+
+      <div class="how-list">
+        <div class="how-list-item">
+          <span class="how-n">01</span>
+          <span>Fold paper into 8 sections, or grab a sketchpad</span>
+        </div>
+        <div class="how-list-item">
+          <span class="how-n">02</span>
+          <span>Hit Start — the timer runs, voice coaches you through each round</span>
+        </div>
+        <div class="how-list-item">
+          <span class="how-n">03</span>
+          <span>Sketch one idea per panel — don't lift your pen, don't overthink</span>
+        </div>
+        <div class="how-list-item">
+          <span class="how-n">04</span>
+          <span>When all 8 are done, choose the one that surprises you most</span>
+        </div>
+      </div>
+
+      <div class="video-section">
+        <div class="video-label">Watch how to prepare</div>
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/UXOLJy0E7Pg?start=75"
+            title="How to prepare for the Crazy 8 exercise"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <button class="btn-start" onclick="startWorkout()">
+        <span>Start Workout</span>
+      </button>
+
+    </section>
+
+    <!-- Timer Section -->
+    <section class="screen" id="exerciseScreen">
+
+      <!-- Left panel: timer + controls -->
+      <div class="panel-left">
+
+        <div class="round-meta">
+          <div class="round-tag">Round <span id="roundNum">1</span> of 8</div>
+          <div class="round-prompt" id="promptText">Sketch your first idea</div>
+          <div class="prompt-hint" id="promptHint"></div>
+        </div>
+
+        <div class="timer-wrap">
+          <svg class="timer-svg" viewBox="0 0 200 200">
+            <circle class="t-bg" cx="100" cy="100" r="92"/>
+            <circle class="t-ring" id="tRing" cx="100" cy="100" r="92"/>
+          </svg>
+          <div class="timer-face">
+            <div class="timer-digits" id="timerDigits">60</div>
+            <div class="timer-sub">seconds</div>
+          </div>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-meta">
+            <span>Overall Progress</span>
+            <span id="progressLabel">0 / 8</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-thumb" id="progressThumb" style="width:0%"></div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button class="ctrl-btn" id="pauseBtn" onclick="togglePause()" title="Pause / Resume">II</button>
+          <button class="ctrl-btn" onclick="stopWorkout()" title="Stop">&#9632;</button>
+          <button class="ctrl-btn active-ctrl" id="voiceBtn" onclick="toggleVoice()" title="Voice on/off">&#9834;</button>
+          <span class="voice-label">Voice</span>
+        </div>
+
+      </div>
+
+      <!-- Right panel: sketch tracker -->
+      <div class="panel-right">
+        <div class="panel-right-label">Your Sketches</div>
+        <div class="sketch-list" id="sketchList">
+          <!-- Filled by JavaScript -->
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Convergence Section -->
+    <section class="screen" id="completionScreen">
+
+      <div class="done-tag">Workout Complete</div>
+      <div class="done-title">DONE.</div>
+      <div class="done-divider"></div>
+      <p class="done-message">
+        Eight ideas in eight minutes.<br>
+        Your creative muscle just got stronger.
+      </p>
+
+      <div class="reflection-section">
+        <div class="reflection-intro">Now we can slow down.</div>
+        <ul class="reflection-list">
+          <li class="reflection-q">VOTE or SELECT THE BEST</li>
+          <li class="reflection-q">Which idea surprises you?</li>
+          <li class="reflection-q">Which idea solves the problem best?</li>
+          <li class="reflection-q">Can two ideas be combined?</li>
+        </ul>
+      </div>
+
+      <div class="done-stats">
+        <div class="done-stat">
+          <div class="done-stat-n">8</div>
+          <div class="done-stat-l">Ideas created</div>
+        </div>
+        <div class="done-stat">
+          <div class="done-stat-n">8m</div>
+          <div class="done-stat-l">Total time</div>
+        </div>
+        <div class="done-stat">
+          <div class="done-stat-n">∞</div>
+          <div class="done-stat-l">Possibilities</div>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn-ghost" onclick="restartWorkout()">Again</button>
+        <button class="btn-ghost" onclick="resetToStart()">Home</button>
+      </div>
+
+    </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bottombar">
+      <div class="bottombar-note">No login &nbsp;·&nbsp; No account &nbsp;·&nbsp; Just ideas</div>
+      <div class="voice-status">
+        <div class="voice-dot" id="voiceDot"></div>
+        <span id="voiceStatusText">Voice ready</span>
+      </div>
+    </footer>
+
+  </div><!-- /shell -->
+
+  
+</body>
+  <script src="crazy_eight.js"></script>
+</html>
