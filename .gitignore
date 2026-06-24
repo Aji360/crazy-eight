@@ -3,6 +3,9 @@ crazy8/
 
 # Research PDFs
 *.pdf
+*.doc
+*.png
+*.docx
 
 # Word temp files
 ~$*
