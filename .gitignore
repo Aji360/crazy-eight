@@ -1,8 +1,14 @@
 # Flutter subproject (has its own repo)
 crazy8/
 
-# Research PDFs
+# Research PDFs and media
 *.pdf
+*.doc
+*.png
+*.docx
+*.jpeg
+*.jpg
+*.psd
 
 # Word temp files
 ~$*

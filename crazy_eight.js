@@ -26,7 +26,7 @@ const VOICE_CUES = {
     "Last round. Combine your best ideas."
   ],
   ten:     "Ten seconds.",
-  done:    "That's eight. Now we can slow down. Which idea surprises you? Which one would you build first? Which idea solves the problem best? Can two ideas be combined?"
+  done:    "That's eight. Now we can slow down and select the best ideas. Which idea surprises you? Which idea solves the problem best? Can two ideas be combined?"
 };
 
 /* ─── AUDIO VOICE ─── */
@@ -85,7 +85,9 @@ const $ = id => document.getElementById(id);
 const screens = {
   start:      $('startScreen'),
   exercise:   $('exerciseScreen'),
-  completion: $('completionScreen')
+  completion: $('completionScreen'),
+  why:        $('whyScreen'),
+  contact:    $('contactScreen')
 };
 
 /* ─── SPEECH ─── */
@@ -302,6 +304,23 @@ function resetToStart() {
   timeLeft = ROUND_DURATION;
   $('topbarStatus').textContent = 'READY';
   show('start');
+}
+
+/* ─── NAV ─── */
+function showWhy() {
+  clearInterval(ticker);
+  cancelAnimationFrame(rowFillAnimFrame);
+  window.speechSynthesis.cancel();
+  $('topbarStatus').textContent = 'WHY IT WORKS';
+  show('why');
+}
+
+function showContact() {
+  clearInterval(ticker);
+  cancelAnimationFrame(rowFillAnimFrame);
+  window.speechSynthesis.cancel();
+  $('topbarStatus').textContent = 'CONTACT';
+  show('contact');
 }
 
 window.addEventListener('beforeunload', () => window.speechSynthesis.cancel());

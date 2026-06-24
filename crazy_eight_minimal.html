@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crazy 8 — Ideation Workout</title>
+  <title>Crazy 8 - Ideation Exercise</title>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="crazy_eight.css">
 </head>
@@ -13,6 +13,10 @@
     <!-- Header Section -->
     <header class="topbar">
       <div class="wordmark">Crazy 8 <span>/ IDEATION WORKOUT</span></div>
+      <nav class="topbar-nav">
+        <button class="topbar-nav-link" onclick="showWhy()">Why It Works</button>
+        <button class="topbar-nav-link" onclick="showContact()">Contact</button>
+      </nav>
       <div class="topbar-status" id="topbarStatus">READY</div>
     </header>
 
@@ -21,6 +25,7 @@
     <!-- Onboarding Section -->
     <section class="screen active" id="startScreen">
 
+      <!-- Hero Section-->
       <div class="hero-number">8</div>
       <div class="hero-label">Ideas &nbsp;·&nbsp; 8 Minutes &nbsp;·&nbsp; No Skill Required</div>
       <div class="divider"></div>
@@ -171,6 +176,137 @@
       </div>
 
     </section>
+
+    <!-- Why It Works Section -->
+    <section class="screen" id="whyScreen">
+
+      <div class="page-hero">
+        <div class="page-eyebrow">The Science Behind It</div>
+        <div class="page-big-title">WHY IT<br>WORKS.</div>
+        <div class="done-divider" style="margin:32px auto;"></div>
+        <p class="page-intro">Crazy 8 works not despite its constraints — because of them. Time pressure, quantity requirements, and analog tools trigger distinct cognitive states that digital brainstorming alone cannot replicate.</p>
+      </div>
+
+      <div class="why-blocks">
+
+        <div class="why-block">
+          <div class="why-block-header">
+            <span class="why-block-n">01</span>
+            <span class="why-block-tag">Divergent Thinking</span>
+          </div>
+          <div class="why-block-title">QUANTITY FORCES QUALITY</div>
+          <p class="why-block-text">The first seven rounds push you into divergent mode — generating ideas without judgment. Sixty seconds is too short to second-guess yourself. You sketch and move on before your inner critic can speak.</p>
+          <p class="why-block-text">Over eight rounds you're pushed past the safe first answer, past the variation-of-the-first-idea, and into territory you wouldn't reach by thinking alone. Research consistently shows the most original ideas emerge in later cycles — after the obvious has been exhausted. Crazy 8 guarantees you get there.</p>
+          <div class="why-stats">
+            <div class="why-stat">
+              <div class="why-stat-n">60s</div>
+              <div class="why-stat-l">Too short to second-guess yourself</div>
+            </div>
+            <div class="why-stat">
+              <div class="why-stat-n">8</div>
+              <div class="why-stat-l">Ideas pushes exploration past the obvious</div>
+            </div>
+            <div class="why-stat">
+              <div class="why-stat-n">5–8</div>
+              <div class="why-stat-l">Rounds where the best ideas tend to appear</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-block">
+          <div class="why-block-header">
+            <span class="why-block-n">02</span>
+            <span class="why-block-tag">Convergent Thinking</span>
+          </div>
+          <div class="why-block-title">SELECTING AND COMBINING</div>
+          <p class="why-block-text">Round 8 shifts your mind toward synthesis. After generating at speed, the brain craves evaluation. The completion prompts aren't decoration — they're a deliberate phase change built into the structure.</p>
+          <ul class="why-list">
+            <li class="why-list-item">
+              <span class="why-list-q">Which idea surprises you?</span>
+              <span class="why-list-a">Surprise signals genuine novelty — unexpected ideas are always worth a closer look.</span>
+            </li>
+            <li class="why-list-item">
+              <span class="why-list-q">Which solves the problem best?</span>
+              <span class="why-list-a">Returns you to the original brief after a session of unconstrained thinking.</span>
+            </li>
+            <li class="why-list-item">
+              <span class="why-list-q">Can two ideas be combined?</span>
+              <span class="why-list-a">Hybrid ideas frequently outperform either source. This is where breakthroughs tend to live.</span>
+            </li>
+          </ul>
+          <p class="why-block-text">The gap between making and evaluating is critical. Crazy 8 builds that gap into its structure — you cannot skip from generation directly to execution.</p>
+        </div>
+
+        <div class="why-block">
+          <div class="why-block-header">
+            <span class="why-block-n">03</span>
+            <span class="why-block-tag">Paper &amp; Pencil</span>
+          </div>
+          <div class="why-block-title">LOW FIDELITY IS THE FEATURE</div>
+          <p class="why-block-text">A pencil sketch made in 60 seconds cannot be mistaken for a finished product. That roughness is not a limitation — it is the entire point.</p>
+          <div class="why-pillars">
+            <div class="why-pillar">
+              <div class="why-pillar-title">Low fidelity = low attachment</div>
+              <p class="why-pillar-text">When you've spent 60 seconds on a drawing, you can discard it without hesitation. When you've spent three hours on a digital mockup, you can't. Paper removes the sunk-cost trap from the process entirely.</p>
+            </div>
+            <div class="why-pillar">
+              <div class="why-pillar-title">Sketches invite collaboration</div>
+              <p class="why-pillar-text">A rough box with an arrow communicates "there's a button here" without accidentally fixing the visual design. Polished mockups shut down feedback. Rough sketches open it up and invite challenge.</p>
+            </div>
+            <div class="why-pillar">
+              <div class="why-pillar-title">Inclusive by default</div>
+              <p class="why-pillar-text">Anyone can participate regardless of software skills. A pen is the universal design tool. The playing field is completely flat — no Figma licence, no learning curve, no barrier.</p>
+            </div>
+            <div class="why-pillar">
+              <div class="why-pillar-title">Research supports it</div>
+              <p class="why-pillar-text">Studies on design fixation (Jansson &amp; Smith, 1991) show high-fidelity references early in the process constrain output — designers copy features rather than explore alternatives. Research in embodied cognition shows the physical act of drawing activates spatial reasoning and motor memory in ways digital tools do not replicate.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page-back">
+        <button class="btn-ghost" onclick="resetToStart()">&#8592; Back to Start</button>
+      </div>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section class="screen" id="contactScreen">
+
+      <div class="page-hero">
+        <div class="page-eyebrow">Get in Touch</div>
+        <div class="page-big-title">CONTACT.</div>
+        <div class="done-divider" style="margin:32px auto;"></div>
+        <p class="page-intro">Built to help designers think faster. Free, open source, and private — no account, no data collection, no catch.</p>
+      </div>
+
+      <div class="contact-items">
+        <a class="contact-item" href="mailto:generaljibson@gmail.com">
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-value">generaljibson@gmail.com</div>
+          <div class="contact-item-arrow">&#8594;</div>
+        </a>
+        <a class="contact-item" href="https://github.com/Aji360/crazy-eight" target="_blank" rel="noopener">
+          <div class="contact-item-label">GitHub</div>
+          <div class="contact-item-value">Aji360/crazy-eight</div>
+          <div class="contact-item-arrow">&#8594;</div>
+        </a>
+      </div>
+
+      <div class="contact-about">
+        <div class="contact-about-label">About this project</div>
+        <p class="contact-about-text">Crazy 8 is a timed ideation tool for product designers, UX researchers, and teams who need to generate eight distinct ideas in eight focused minutes. It uses voice coaching, visual progress tracking, and structured reflection prompts to move from blank page to convergent thinking in one session.</p>
+        <p class="contact-about-text">Have a feature request, found a bug, or want to collaborate? Open an issue on GitHub or send an email — all feedback is welcome.</p>
+      </div>
+
+      <div class="page-back">
+        <button class="btn-ghost" onclick="resetToStart()">&#8592; Back to Start</button>
+      </div>
+
+    </section>
+
     </main>
 
     <!-- Footer Section -->
