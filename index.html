@@ -282,7 +282,8 @@
         <p class="page-intro">Built to help designers think faster. Free and private — no account, no data collection, no catch.</p>
       </div>
 
-      <form class="feedback-form" name="feedback" method="POST" data-netlify="true">
+      <form class="feedback-form" name="feedback" method="POST" data-netlify="true" id="feedbackForm">
+        <input type="hidden" name="form-name" value="feedback">
         <div class="form-group">
           <label class="form-label" for="feedbackName">Name</label>
           <input class="form-input" type="text" id="feedbackName" name="name" placeholder="Your name" required>
@@ -297,6 +298,7 @@
         </div>
         <button class="btn-start" type="submit"><span>Send Feedback</span></button>
       </form>
+      <p id="feedbackSuccess" style="display:none; margin-top:16px; font-size:0.78rem; letter-spacing:1px; text-transform:uppercase;">Message sent. Thanks!</p>
 
       <div class="contact-about">
         <div class="contact-about-label">About this project</div>
@@ -324,6 +326,22 @@
   </div><!-- /shell -->
 
 
-</body>
   <script src="crazy_eight.js"></script>
+  <script>
+    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = this;
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      }).then(function() {
+        form.style.display = 'none';
+        document.getElementById('feedbackSuccess').style.display = 'block';
+      }).catch(function() {
+        alert('Something went wrong. Please try again.');
+      });
+    });
+  </script>
+</body>
 </html>
