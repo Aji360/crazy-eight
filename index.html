@@ -12,7 +12,7 @@
 
     <!-- Header Section -->
     <header class="topbar">
-      <div class="wordmark">Crazy 8 <span>/ IDEATION WORKOUT</span></div>
+      <div class="wordmark wordmark-link" onclick="resetToStart()">Crazy 8 <span>/ IDEATION WORKOUT</span></div>
       <nav class="topbar-nav">
         <button class="topbar-nav-link" onclick="showWhy()">Why It Works</button>
         <button class="topbar-nav-link" onclick="showContact()">Contact</button>
@@ -279,26 +279,29 @@
         <div class="page-eyebrow">Get in Touch</div>
         <div class="page-big-title">CONTACT.</div>
         <div class="done-divider" style="margin:32px auto;"></div>
-        <p class="page-intro">Built to help designers think faster. Free, open source, and private — no account, no data collection, no catch.</p>
+        <p class="page-intro">Built to help designers think faster. Free and private — no account, no data collection, no catch.</p>
       </div>
 
-      <div class="contact-items">
-        <a class="contact-item" href="mailto:generaljibson@gmail.com">
-          <div class="contact-item-label">Email</div>
-          <div class="contact-item-value">generaljibson@gmail.com</div>
-          <div class="contact-item-arrow">&#8594;</div>
-        </a>
-        <a class="contact-item" href="https://github.com/Aji360/crazy-eight" target="_blank" rel="noopener">
-          <div class="contact-item-label">GitHub</div>
-          <div class="contact-item-value">Aji360/crazy-eight</div>
-          <div class="contact-item-arrow">&#8594;</div>
-        </a>
-      </div>
+      <form class="feedback-form" action="mailto:generaljibson@gmail.com" method="post" enctype="text/plain">
+        <div class="form-group">
+          <label class="form-label" for="feedbackName">Name</label>
+          <input class="form-input" type="text" id="feedbackName" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="feedbackEmail">Email</label>
+          <input class="form-input" type="email" id="feedbackEmail" name="reply-to" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="feedbackMessage">Message</label>
+          <textarea class="form-textarea" id="feedbackMessage" name="message" rows="5" placeholder="Feature request, bug report, or just a hello..." required></textarea>
+        </div>
+        <button class="btn-start" type="submit"><span>Send Feedback</span></button>
+      </form>
 
       <div class="contact-about">
         <div class="contact-about-label">About this project</div>
         <p class="contact-about-text">Crazy 8 is a timed ideation tool for product designers, UX researchers, and teams who need to generate eight distinct ideas in eight focused minutes. It uses voice coaching, visual progress tracking, and structured reflection prompts to move from blank page to convergent thinking in one session.</p>
-        <p class="contact-about-text">Have a feature request, found a bug, or want to collaborate? Open an issue on GitHub or send an email — all feedback is welcome.</p>
+        <p class="contact-about-text">Have a feature request, found a bug, or want to collaborate? Send an email — all feedback is welcome.</p>
       </div>
 
       <div class="page-back">
@@ -320,7 +323,7 @@
 
   </div><!-- /shell -->
 
-  
+
 </body>
   <script src="crazy_eight.js"></script>
 </html>
