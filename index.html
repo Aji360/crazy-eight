@@ -51,11 +51,21 @@
 
     <!-- Header Section -->
     <header class="topbar">
-      <div class="wordmark wordmark-link" onclick="resetToStart()">Crazy 8 <span>/ IDEATION WORKOUT</span></div>
+      <div class="wordmark wordmark-link" onclick="resetToStart()" aria-label="Crazy 8 — go to home">
+        <svg viewBox="0 0 260 80" height="36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M40 8 A32 32 0 1 1 8 40" fill="none" stroke="var(--black)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M8 40 A32 32 0 0 1 18 16" fill="none" stroke="var(--black)" stroke-width="1.2" stroke-linecap="round" opacity=".28"/>
+          <line x1="40" y1="8" x2="34" y2="1" stroke="var(--black)" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="40" y1="8" x2="46" y2="1" stroke="var(--black)" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M30 26 Q30 18 40 17 Q51 15 52 23 Q54 32 41 37 Q54 42 54 52 Q54 62 40 63 Q26 62 26 52 Q26 42 40 37 Q30 37 30 30Z" fill="none" stroke="var(--black)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="90" y1="12" x2="90" y2="68" stroke="var(--black)" stroke-width="1" opacity=".2"/>
+          <text x="106" y="34" style="font-size:22px;font-weight:400;fill:var(--black);font-family:'Bebas Neue',sans-serif;letter-spacing:4px;">CRAZY</text>
+          <text x="106" y="60" style="font-size:22px;font-weight:400;fill:var(--black);font-family:'Bebas Neue',sans-serif;letter-spacing:4px;">EIGHT</text>
+        </svg>
+      </div>
       <nav class="topbar-nav">
         <button class="topbar-nav-link" onclick="showWhy()">Why It Works</button>
         <button class="topbar-nav-link" onclick="showContact()">Contact</button>
-        <button class="topbar-nav-link" onclick="showPrivacy()">Privacy</button>
       </nav>
       <div class="topbar-status" id="topbarStatus">READY</div>
     </header>
