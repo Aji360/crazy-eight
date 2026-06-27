@@ -87,7 +87,8 @@ const screens = {
   exercise:   $('exerciseScreen'),
   completion: $('completionScreen'),
   why:        $('whyScreen'),
-  contact:    $('contactScreen')
+  contact:    $('contactScreen'),
+  privacy:    $('privacyScreen')
 };
 
 /* ─── SPEECH ─── */
@@ -157,6 +158,8 @@ function animateRowFill(rowIndex) {
 
 /* ─── START ─── */
 function startWorkout() {
+  const ytFrame = document.querySelector('.video-wrap iframe');
+  if (ytFrame) { const s = ytFrame.src; ytFrame.src = ''; ytFrame.src = s; }
   round    = 1;
   timeLeft = ROUND_DURATION;
   paused   = false;
@@ -321,6 +324,14 @@ function showContact() {
   window.speechSynthesis.cancel();
   $('topbarStatus').textContent = 'CONTACT';
   show('contact');
+}
+
+function showPrivacy() {
+  clearInterval(ticker);
+  cancelAnimationFrame(rowFillAnimFrame);
+  window.speechSynthesis.cancel();
+  $('topbarStatus').textContent = 'PRIVACY';
+  show('privacy');
 }
 
 window.addEventListener('beforeunload', () => window.speechSynthesis.cancel());

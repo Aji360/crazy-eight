@@ -3,7 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crazy 8 - Ideation Exercise</title>
+  <title>Crazy 8 Ideation Timer — Free Design Sprint Tool</title>
+  <meta name="description" content="Run a Crazy 8 ideation session in your browser. Free timed tool that coaches you through 8 sketches in 8 minutes — no account, no install, just ideas.">
+  <meta name="keywords" content="crazy 8 ideation, crazy eights design sprint, ideation timer, design sprint exercise, 8 ideas 8 minutes, UX ideation tool">
+  <link rel="canonical" href="https://crazy-eight.netlify.app/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://crazy-eight.netlify.app/">
+  <meta property="og:title" content="Crazy 8 Ideation Timer — Free Design Sprint Tool">
+  <meta property="og:description" content="8 ideas in 8 minutes. Free browser-based timer with voice coaching for the Crazy 8 design sprint exercise. No account required.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Crazy 8 Ideation Timer — Free Design Sprint Tool">
+  <meta name="twitter:description" content="8 ideas in 8 minutes. Free browser-based timer with voice coaching for the Crazy 8 design sprint exercise.">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Crazy 8 Ideation Timer",
+    "url": "https://crazy-eight.netlify.app/",
+    "description": "A free browser-based timer for the Crazy 8 design sprint ideation exercise. Guides you through 8 sketches in 8 minutes with voice coaching and visual progress tracking.",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "GBP"
+    },
+    "featureList": [
+      "8-round countdown timer with visual ring",
+      "Voice coaching between rounds",
+      "Visual sketch progress tracker",
+      "Convergent thinking reflection prompts",
+      "No account or installation required"
+    ]
+  }
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="crazy_eight.css">
 </head>
@@ -16,6 +55,7 @@
       <nav class="topbar-nav">
         <button class="topbar-nav-link" onclick="showWhy()">Why It Works</button>
         <button class="topbar-nav-link" onclick="showContact()">Contact</button>
+        <button class="topbar-nav-link" onclick="showPrivacy()">Privacy</button>
       </nav>
       <div class="topbar-status" id="topbarStatus">READY</div>
     </header>
@@ -312,11 +352,149 @@
 
     </section>
 
+    <!-- Privacy Section -->
+    <section class="screen" id="privacyScreen">
+
+      <div class="page-hero">
+        <div class="page-eyebrow">UK GDPR &amp; Data Protection Act 2018</div>
+        <div class="page-big-title">PRIVACY.</div>
+        <div class="done-divider" style="margin:32px auto;"></div>
+        <p class="page-intro">This notice explains what personal data Crazy 8 collects, why, and the rights you hold under UK data protection law. Last updated: June 2026.</p>
+      </div>
+
+      <div class="why-blocks">
+
+        <div class="why-block">
+          <div class="why-block-header">
+            <span class="why-block-n">01</span>
+            <span class="why-block-tag">Data Controller</span>
+          </div>
+          <div class="why-block-title">WHO WE ARE</div>
+          <p class="why-block-text">Crazy 8 is an independent, free-to-use ideation tool. The data controller responsible for any personal data processed through this website is the operator of crazy8.netlify.app. You can reach us via the Contact page on this site.</p>
+          <p class="why-block-text">We are not required to register with the Information Commissioner's Office (ICO) at this time because we do not process personal data at a scale or in a manner that triggers mandatory registration. We remain committed to processing any data we do receive in full compliance with the UK GDPR and the Data Protection Act 2018.</p>
+        </div>
+
+        <div class="why-block">
+          <div class="why-block-header">
+            <span class="why-block-n">02</span>
+            <span class="why-block-tag">Data We Collect</span>
+          </div>
+          <div class="why-block-title">WHAT &amp; WHY</div>
+          <p class="why-block-text">Crazy 8 is designed to collect as little data as possible. There is no account system, no login, and no behavioural tracking. Below is a full account of the limited data that may be processed.</p>
+          <div class="why-pillars">
+            <div class="why-pillar">
+              <div class="why-pillar-title">Contact form submissions</div>
+              <p class="why-pillar-text">When you use the Contact page to send feedback, your name, email address (optional), and message are collected. This data is processed for the sole purpose of reading and responding to your message. The lawful basis is our legitimate interest in improving the tool and communicating with people who reach out to us (UK GDPR Article 6(1)(f)).</p>
+            </div>
+            <div class="why-pillar">
+              <div class="why-pillar-title">Embedded YouTube video</div>
+              <p class="why-pillar-text">The start screen includes an embedded YouTube video hosted by Google. When you interact with or play this video, Google/YouTube may set cookies and collect data about your device and viewing behaviour under their own privacy policy. We have no access to or control over this data. You should review Google's Privacy Policy for details.</p>
+            </div>
+            <div class="why-pillar">
+              <div class="why-pillar-title">Hosting and server logs</div>
+              <p class="why-pillar-text">This site is hosted on Netlify. Netlify's infrastructure may automatically log technical data — such as your IP address, browser type, and pages requested — for security and service reliability purposes. This is standard web hosting practice. See Netlify's Privacy Policy for details.</p>
+            </div>
+            <div class="why-pillar">
+              <div class="why-pillar-title">No analytics or cookies</div>
+              <p class="why-pillar-text">We do not use Google Analytics, tracking pixels, advertising cookies, or any first-party analytics tool. No profile is built about your visit. The tool runs entirely in your browser — your timer progress, voice settings, and session state are held only in memory and are deleted when you close the tab.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-block">
+          <div class="why-block-header">
+            <span class="why-block-n">03</span>
+            <span class="why-block-tag">Retention &amp; Sharing</span>
+          </div>
+          <div class="why-block-title">HOW LONG &amp; WHO</div>
+          <p class="why-block-text">Contact form submissions are stored by Netlify Forms for as long as necessary to read and act on your message, and no longer than 12 months from the date of submission. We do not sell, rent, or share your personal data with any third party for marketing or commercial purposes.</p>
+          <ul class="why-list">
+            <li class="why-list-item">
+              <span class="why-list-q">Netlify Inc.</span>
+              <span class="why-list-a">Our hosting provider and form processor. Netlify processes form submission data as a data processor acting on our behalf, under a Data Processing Agreement. Netlify is certified under the EU-U.S. Data Privacy Framework and implements appropriate safeguards for international transfers.</span>
+            </li>
+            <li class="why-list-item">
+              <span class="why-list-q">Google LLC (YouTube)</span>
+              <span class="why-list-a">Google operates independently as a data controller for data collected via the YouTube embed. We have no data-sharing relationship with Google — any data collection is governed solely by Google's terms and privacy policy.</span>
+            </li>
+            <li class="why-list-item">
+              <span class="why-list-q">Law enforcement or legal obligation</span>
+              <span class="why-list-a">We may disclose personal data if required to do so by law or in response to valid requests by public authorities (e.g., a court order). We will only do so to the extent required and will notify you where legally permissible.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="why-block">
+          <div class="why-block-header">
+            <span class="why-block-n">04</span>
+            <span class="why-block-tag">Your Rights</span>
+          </div>
+          <div class="why-block-title">YOUR RIGHTS UNDER UK GDPR</div>
+          <p class="why-block-text">Under the UK General Data Protection Regulation and the Data Protection Act 2018, you have the following rights regarding any personal data we hold about you. These rights are not absolute and may be subject to exemptions, but we will respond to all requests within one calendar month.</p>
+          <div class="why-pillars">
+            <div class="why-pillar">
+              <div class="why-pillar-title">Right of access</div>
+              <p class="why-pillar-text">You can request a copy of the personal data we hold about you (a Subject Access Request). We will provide this free of charge within one month.</p>
+            </div>
+            <div class="why-pillar">
+              <div class="why-pillar-title">Right to rectification</div>
+              <p class="why-pillar-text">If any data we hold about you is inaccurate or incomplete, you have the right to have it corrected without undue delay.</p>
+            </div>
+            <div class="why-pillar">
+              <div class="why-pillar-title">Right to erasure</div>
+              <p class="why-pillar-text">Also known as the "right to be forgotten." You can request that we delete personal data we hold about you where there is no legitimate reason to continue processing it.</p>
+            </div>
+            <div class="why-pillar">
+              <div class="why-pillar-title">Right to object</div>
+              <p class="why-pillar-text">Where we rely on legitimate interests as our lawful basis, you have the right to object to that processing. We will cease processing unless we can demonstrate compelling legitimate grounds that override your interests.</p>
+            </div>
+          </div>
+          <p class="why-block-text" style="margin-top:24px;">You also have the right to restrict processing and the right to data portability in certain circumstances. To exercise any of these rights, please contact us via the Contact page. We will not charge a fee and will respond within one month, with the option to extend by a further two months for complex or numerous requests.</p>
+        </div>
+
+        <div class="why-block">
+          <div class="why-block-header">
+            <span class="why-block-n">05</span>
+            <span class="why-block-tag">Complaints &amp; Supervisory Authority</span>
+          </div>
+          <div class="why-block-title">THE ICO</div>
+          <p class="why-block-text">If you believe we have not handled your personal data in accordance with UK data protection law, you have the right to lodge a complaint with the Information Commissioner's Office (ICO) — the UK's independent supervisory authority for data protection.</p>
+          <p class="why-block-text">We would, however, welcome the opportunity to address your concerns directly before you contact the ICO. Please reach out via the Contact page first.</p>
+          <div class="why-stats" style="grid-template-columns:1fr 1fr;">
+            <div class="why-stat">
+              <div class="why-stat-n" style="font-size:1rem;letter-spacing:1px;">ICO</div>
+              <div class="why-stat-l">Information Commissioner's Office — ico.org.uk</div>
+            </div>
+            <div class="why-stat">
+              <div class="why-stat-n" style="font-size:1rem;letter-spacing:1px;">0303 123 1113</div>
+              <div class="why-stat-l">ICO helpline (Mon–Fri, 9am–4:30pm)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="why-block">
+          <div class="why-block-header">
+            <span class="why-block-n">06</span>
+            <span class="why-block-tag">Cookies</span>
+          </div>
+          <div class="why-block-title">COOKIES &amp; TRACKING</div>
+          <p class="why-block-text">Crazy 8 does not set any first-party cookies. We do not use session cookies, persistent cookies, or tracking technologies of any kind on this domain.</p>
+          <p class="why-block-text">The embedded YouTube video on the start screen is served by Google and may set third-party cookies on your device when you interact with the player. These are governed entirely by Google's Cookie Policy. If you prefer to avoid YouTube cookies, you can close or ignore the video — the timer and all other features of Crazy 8 will work normally without it.</p>
+        </div>
+
+      </div>
+
+      <div class="page-back">
+        <button class="btn-ghost" onclick="resetToStart()">&#8592; Back to Start</button>
+      </div>
+
+    </section>
+
     </main>
 
     <!-- Footer Section -->
     <footer class="bottombar">
-      <div class="bottombar-note">No login &nbsp;·&nbsp; No account &nbsp;·&nbsp; Just ideas</div>
+      <div class="bottombar-note">No login &nbsp;·&nbsp; No account &nbsp;·&nbsp; Just ideas &nbsp;·&nbsp; <button class="footer-privacy-link" onclick="showPrivacy()">Privacy</button></div>
       <div class="voice-status">
         <div class="voice-dot" id="voiceDot"></div>
         <span id="voiceStatusText">Voice ready</span>

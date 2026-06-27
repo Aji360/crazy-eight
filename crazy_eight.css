@@ -633,7 +633,8 @@ html, body {
 
 /* ── SHARED CONTENT PAGE ── */
 #whyScreen,
-#contactScreen {
+#contactScreen,
+#privacyScreen {
   flex-direction: column;
   align-items: center;
   padding: 60px 40px;
@@ -964,6 +965,21 @@ html, body {
   color: var(--gray-4);
 }
 
+.footer-privacy-link {
+  font-family: var(--mono);
+  font-size: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s;
+}
+
+.footer-privacy-link:hover { color: var(--black); }
+
 .voice-status {
   font-size: 0.6rem;
   letter-spacing: 2px;
@@ -998,7 +1014,7 @@ html, body {
   .topbar-nav { gap: 14px; }
   .topbar-nav-link { font-size: 0.55rem; letter-spacing: 2px; }
 
-  #whyScreen, #contactScreen { padding: 40px 20px; }
+  #whyScreen, #contactScreen, #privacyScreen { padding: 40px 20px; }
   .page-big-title { font-size: clamp(60px, 18vw, 110px); }
   .page-intro { font-size: 0.82rem; }
 
