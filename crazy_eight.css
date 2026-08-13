@@ -20,14 +20,14 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── LAYOUT ── */
+/* LAYOUT */
 .shell {
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
 
-/* ── HEADER SECTION ── */
+/* HEADER SECTION */
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -45,6 +45,7 @@ html, body {
 .wordmark-link {
   cursor: pointer;
   user-select: none;
+  text-decoration: none;
 }
 
 .wordmark svg {
@@ -60,7 +61,7 @@ html, body {
   color: var(--gray-3);
 }
 
-/* ── SCREENS ── */
+/* SCREENS */
 .screen {
   display: none;
   animation: appear 0.4s ease both;
@@ -72,7 +73,7 @@ html, body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── START SCREEN ── */
+/* START SCREEN */
 #startScreen {
   flex-direction: column;
   align-items: center;
@@ -166,7 +167,7 @@ html, body {
   line-height: 1.6;
 }
 
-/* ── ONBOARDING VIDEO SECTION ── */
+/* ONBOARDING VIDEO SECTION */
 .video-section {
   max-width: 560px;
   width: 100%;
@@ -228,7 +229,7 @@ html, body {
 .btn-start:hover { color: var(--black); border: 2px solid var(--black); }
 .btn-start span { position: relative; z-index: 1; }
 
-/* ── EXERCISE SCREEN ── */
+/* EXERCISE SCREEN */
 #exerciseScreen {
   flex-direction: row;
   height: calc(100vh - 74px);
@@ -480,7 +481,7 @@ html, body {
 }
 .sketch-row.done .sketch-row-check { opacity: 1; }
 
-/* ── COMPLETION SCREEN ── */
+/* COMPLETION SCREEN */
 #completionScreen {
   flex-direction: column;
   align-items: center;
@@ -567,11 +568,13 @@ html, body {
   border: 2px solid var(--black);
   padding: 14px 32px;
   cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
   transition: background 0.2s, color 0.2s;
 }
 .btn-ghost:hover { background: var(--black); color: var(--white); }
 
-/* ── CONVERGENCE STAGE ── */
+/* CONVERGENCE STAGE */
 .reflection-section {
   max-width: 420px;
   width: 100%;
@@ -605,7 +608,7 @@ html, body {
   border-top: 1px solid var(--gray-5);
 }
 
-/* ── TOPBAR NAV ── */
+/* TOPBAR NAV */
 .topbar-nav {
   display: flex;
   gap: 24px;
@@ -622,13 +625,14 @@ html, body {
   border: none;
   cursor: pointer;
   padding: 4px 0;
+  text-decoration: none;
   transition: color 0.15s;
   white-space: nowrap;
 }
 
 .topbar-nav-link:hover { color: var(--black); }
 
-/* ── SHARED CONTENT PAGE ── */
+/* SHARED CONTENT PAGE */
 #whyScreen,
 #contactScreen,
 #privacyScreen {
@@ -672,7 +676,7 @@ html, body {
   margin: 48px 0 64px;
 }
 
-/* ── WHY SCREEN ── */
+/* WHY SCREEN */
 .why-blocks {
   max-width: 640px;
   width: 100%;
@@ -814,7 +818,7 @@ html, body {
   letter-spacing: 0.2px;
 }
 
-/* ── CONTACT SCREEN ── */
+/* CONTACT SCREEN */
 .contact-items {
   max-width: 640px;
   width: 100%;
@@ -890,7 +894,7 @@ html, body {
 
 .contact-about-text:last-child { margin-bottom: 0; }
 
-/* ── FEEDBACK FORM ── */
+/* FEEDBACK FORM */
 .feedback-form {
   max-width: 640px;
   width: 100%;
@@ -946,7 +950,7 @@ html, body {
   margin-top: 8px;
 }
 
-/* ── FOOTER SECTION ── */
+/* FOOTER SECTION */
 .bottombar {
   border-top: 2px solid var(--black);
   display: flex;
@@ -971,6 +975,7 @@ html, body {
   background: none;
   border: none;
   cursor: pointer;
+  text-decoration: none;
   padding: 0;
   transition: color 0.15s;
 }
@@ -1004,7 +1009,7 @@ html, body {
   to   { opacity: 0.2; }
 }
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media (max-width: 680px) {
   .topbar { padding: 18px 20px; }
   .wordmark svg { height: 28px; }

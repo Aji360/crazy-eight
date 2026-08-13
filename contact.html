@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Crazy 8 Ideation Timer</title>
+  <meta name="description" content="Send feedback, report a bug, or get in touch about the free Crazy 8 ideation timer. No account required, all feedback welcome.">
+  <link rel="canonical" href="https://crazy8ideation.com/contact.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://crazy8ideation.com/contact.html">
+  <meta property="og:title" content="Contact - Crazy 8 Ideation Timer">
+  <meta property="og:description" content="Send feedback, report a bug, or get in touch about the free Crazy 8 ideation timer.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contact - Crazy 8 Ideation Timer">
+  <meta name="twitter:description" content="Send feedback, report a bug, or get in touch about the free Crazy 8 ideation timer.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Crazy 8 Ideation Timer",
+    "url": "https://crazy8ideation.com/contact.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Crazy 8 Ideation Timer",
+      "url": "https://crazy8ideation.com/"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="crazy_eight.css">
+</head>
+<body>
+  <div class="shell">
+
+    <!-- Header Section -->
+    <header class="topbar">
+      <a class="wordmark wordmark-link" href="index.html" aria-label="Crazy 8 — go to home">
+        <svg viewBox="0 0 260 80" height="36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M40 8 A32 32 0 1 1 8 40" fill="none" stroke="var(--black)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M8 40 A32 32 0 0 1 18 16" fill="none" stroke="var(--black)" stroke-width="1.2" stroke-linecap="round" opacity=".28"/>
+          <line x1="40" y1="8" x2="34" y2="1" stroke="var(--black)" stroke-width="2.2" stroke-linecap="round"/>
+          <line x1="40" y1="8" x2="46" y2="1" stroke="var(--black)" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M30 26 Q30 18 40 17 Q51 15 52 23 Q54 32 41 37 Q54 42 54 52 Q54 62 40 63 Q26 62 26 52 Q26 42 40 37 Q30 37 30 30Z" fill="none" stroke="var(--black)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="90" y1="12" x2="90" y2="68" stroke="var(--black)" stroke-width="1" opacity=".2"/>
+          <text x="106" y="34" style="font-size:22px;font-weight:400;fill:var(--black);font-family:'Bebas Neue',sans-serif;letter-spacing:4px;">CRAZY</text>
+          <text x="106" y="60" style="font-size:22px;font-weight:400;fill:var(--black);font-family:'Bebas Neue',sans-serif;letter-spacing:4px;">EIGHT</text>
+        </svg>
+      </a>
+      <nav class="topbar-nav">
+        <a class="topbar-nav-link" href="why.html">Why It Works</a>
+        <a class="topbar-nav-link" href="contact.html">Contact</a>
+      </nav>
+      <div class="topbar-status">CONTACT</div>
+    </header>
+
+    <main>
+    <section class="screen active" id="contactScreen">
+
+      <div class="page-hero">
+        <div class="page-eyebrow">Get in Touch</div>
+        <h1 class="page-big-title">CONTACT.</h1>
+        <div class="done-divider" style="margin:32px auto;"></div>
+        <p class="page-intro">Built to help designers think faster. Free and private — no account, no data collection, no catch.</p>
+      </div>
+
+      <form class="feedback-form" name="feedback" method="POST" action="/success.html" data-netlify="true" id="feedbackForm">
+        <input type="hidden" name="form-name" value="feedback">
+        <div class="form-group">
+          <label class="form-label" for="feedbackName">Name</label>
+          <input class="form-input" type="text" id="feedbackName" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="feedbackEmail">Email</label>
+          <input class="form-input" type="email" id="feedbackEmail" name="reply-to" placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="feedbackMessage">Message</label>
+          <textarea class="form-textarea" id="feedbackMessage" name="message" rows="5" placeholder="Feature request, bug report, or just a hello..." required></textarea>
+        </div>
+        <button class="btn-start" type="submit"><span>Send Feedback</span></button>
+      </form>
+      <p id="feedbackSuccess" style="display:none; margin-top:16px; font-size:0.78rem; letter-spacing:1px; text-transform:uppercase;">Message sent. Thanks!</p>
+
+      <div class="contact-about">
+        <div class="contact-about-label">About this project</div>
+        <p class="contact-about-text">Crazy 8 is a timed ideation tool for product designers, UX researchers, and teams who need to generate eight distinct ideas in eight focused minutes. It uses voice coaching, visual progress tracking, and structured reflection prompts to move from blank page to convergent thinking in one session.</p>
+        <p class="contact-about-text">Have a feature request, found a bug, or want to collaborate? Send an email — all feedback is welcome.</p>
+      </div>
+
+      <div class="page-back">
+        <a class="btn-ghost" href="index.html">&#8592; Back to Start</a>
+      </div>
+
+    </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bottombar">
+      <div class="bottombar-note">No login &nbsp;·&nbsp; No account &nbsp;·&nbsp; Just ideas &nbsp;·&nbsp; <a class="footer-privacy-link" href="privacy.html">Privacy</a></div>
+    </footer>
+
+  </div><!-- /shell -->
+
+  <script>
+    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = this;
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      }).then(function() {
+        form.style.display = 'none';
+        document.getElementById('feedbackSuccess').style.display = 'block';
+      }).catch(function() {
+        alert('Something went wrong. Please try again.');
+      });
+    });
+  </script>
+</body>
+</html>

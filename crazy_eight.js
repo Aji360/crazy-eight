@@ -3,6 +3,7 @@ const ROUND_DURATION = 60;
 const TOTAL_ROUNDS   = 8;
 const CIRCUMFERENCE  = 2 * Math.PI * 92; // r=92
 
+/* VOICE TEXT HINTS */
 const ROUNDS = [
   { label: "Sketch your first idea",         hint: "Today isn't about creating perfect designs. It's about generating lots of ideas quickly." },
   { label: "A completely different approach", hint: "When the timer ends, move on immediately. What would a beginner design?" },
@@ -29,7 +30,7 @@ const VOICE_CUES = {
   done:    "That's eight. Now we can slow down and select the best ideas. Which idea surprises you? Which idea solves the problem best? Can two ideas be combined?"
 };
 
-/* ─── AUDIO VOICE ─── */
+/* AUDIO SOUNDS */
 let audioCtx = null;
 function getAudioCtx() {
   if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -72,7 +73,7 @@ function playAlarm(type) {
   } catch(e) {}
 }
 
-/* ─── STATE ─── */
+/* ROUND STATE */
 let round       = 1;
 let timeLeft    = ROUND_DURATION;
 let ticker      = null;
@@ -80,18 +81,15 @@ let paused      = false;
 let voiceOn     = true;
 let rowFillAnimFrame = null;
 
-/* ─── ELEMENTS ─── */
+/* SCREENS BASED ON FILE PATH */
 const $ = id => document.getElementById(id);
 const screens = {
   start:      $('startScreen'),
   exercise:   $('exerciseScreen'),
-  completion: $('completionScreen'),
-  why:        $('whyScreen'),
-  contact:    $('contactScreen'),
-  privacy:    $('privacyScreen')
+  completion: $('completionScreen')
 };
 
-/* ─── SPEECH ─── */
+/* SPEECH FEATURE */
 function say(text) {
   if (!voiceOn || !window.speechSynthesis) return;
   window.speechSynthesis.cancel();
@@ -108,7 +106,7 @@ function say(text) {
   window.speechSynthesis.speak(u);
 }
 
-/* ─── BUILD SKETCH LIST ─── */
+/* BUILD SKETCH LIST */
 function buildSketchList() {
   const list = $('sketchList');
   list.innerHTML = '';
@@ -127,14 +125,14 @@ function buildSketchList() {
   }
 }
 
-/* ─── SHOW SCREEN ─── */
+/* SHOW SCREEN */
 function show(name) {
   Object.entries(screens).forEach(([k, el]) => {
     el.classList.toggle('active', k === name);
   });
 }
 
-/* ─── TIMER RING ─── */
+/* TIMER RING */
 function setRing(secondsLeft) {
   const pct    = secondsLeft / ROUND_DURATION;
   const offset = CIRCUMFERENCE * (1 - pct);
@@ -142,7 +140,7 @@ function setRing(secondsLeft) {
   $('tRing').style.strokeDashoffset = offset;
 }
 
-/* ─── ROW FILL ANIMATION ─── */
+/* ROW FILL ANIMATION */
 function animateRowFill(rowIndex) {
   const fill = $('fill' + rowIndex);
   if (!fill) return;
@@ -156,7 +154,7 @@ function animateRowFill(rowIndex) {
   rowFillAnimFrame = requestAnimationFrame(step);
 }
 
-/* ─── START ─── */
+/* START */
 function startWorkout() {
   const ytFrame = document.querySelector('.video-wrap iframe');
   if (ytFrame) { const s = ytFrame.src; ytFrame.src = ''; ytFrame.src = s; }
@@ -173,7 +171,7 @@ function startWorkout() {
   startTicker();
 }
 
-/* ─── TICKER ─── */
+/* TICKER */
 function startTicker() {
   clearInterval(ticker);
   ticker = setInterval(() => {
@@ -187,7 +185,7 @@ function startTicker() {
   }, 1000);
 }
 
-/* ─── END ROUND ─── */
+/* END ROUND */
 function endRound() {
   clearInterval(ticker);
   cancelAnimationFrame(rowFillAnimFrame);
@@ -238,7 +236,7 @@ function updateUI() {
   }
 }
 
-/* ─── FINISH ─── */
+/* FINISH WORKOUT TIMER */
 function finishWorkout() {
   $('progressThumb').style.width = '100%';
   $('progressLabel').textContent = '8 / 8';
@@ -248,7 +246,7 @@ function finishWorkout() {
   setTimeout(() => show('completion'), 800);
 }
 
-/* ─── PAUSE ─── */
+/*  PAUSE BUTTON */
 function togglePause() {
   paused = !paused;
   const btn = $('pauseBtn');
@@ -265,7 +263,7 @@ function togglePause() {
   }
 }
 
-/* ─── VOICE ─── */
+/* VOICE SWITCH */
 function toggleVoice() {
   voiceOn = !voiceOn;
   const btn = $('voiceBtn');
@@ -281,7 +279,7 @@ function toggleVoice() {
   }
 }
 
-/* ─── STOP ─── */
+/* STOP WORKOUT TIMER */
 function stopWorkout() {
   if (!confirm('Stop this workout?')) return;
   clearInterval(ticker);
@@ -290,14 +288,14 @@ function stopWorkout() {
   resetToStart();
 }
 
-/* ─── RESTART ─── */
+/*  RESTART  WORKOUT TIMER */
 function restartWorkout() {
   clearInterval(ticker);
   cancelAnimationFrame(rowFillAnimFrame);
   startWorkout();
 }
 
-/* ─── HOME ─── */
+/* RESET TO HOME SCREEN */
 function resetToStart() {
   clearInterval(ticker);
   cancelAnimationFrame(rowFillAnimFrame);
@@ -307,31 +305,6 @@ function resetToStart() {
   timeLeft = ROUND_DURATION;
   $('topbarStatus').textContent = 'READY';
   show('start');
-}
-
-/* ─── NAV ─── */
-function showWhy() {
-  clearInterval(ticker);
-  cancelAnimationFrame(rowFillAnimFrame);
-  window.speechSynthesis.cancel();
-  $('topbarStatus').textContent = 'WHY IT WORKS';
-  show('why');
-}
-
-function showContact() {
-  clearInterval(ticker);
-  cancelAnimationFrame(rowFillAnimFrame);
-  window.speechSynthesis.cancel();
-  $('topbarStatus').textContent = 'CONTACT';
-  show('contact');
-}
-
-function showPrivacy() {
-  clearInterval(ticker);
-  cancelAnimationFrame(rowFillAnimFrame);
-  window.speechSynthesis.cancel();
-  $('topbarStatus').textContent = 'PRIVACY';
-  show('privacy');
 }
 
 window.addEventListener('beforeunload', () => window.speechSynthesis.cancel());
